@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Success!</title>
+</head>
+<body>
+	Hi {{user.first_name}}!!
+
+	<a href="/logout">Logout</a>
+
+	<h4>Your Trip Schedules</h4>
+	<table>
+		<tr>
+			<td>Destination</td>
+			<td>Travel Start Date</td>
+			<td>Travel End Date</td>
+			<td>Plan</td>
+		</tr>
+					
+		{%for trip in user_trips%}
+		<tr>
+			<td><a href="/travels/destination/{{trip.id}}">{{trip.destination}}</a></td>
+			<td>{{trip.travel_from}}</td>
+			<td>{{trip.travel_to}}</td>
+			<td>{{trip.description}}</td>
+		</tr>
+		{% endfor %}
+		{% for trip in user_joined_trips %}
+		<tr>
+			<td><a href="/travels/destination/{{trip.id}}">{{trip.destination}}</a></td>
+			<td>{{trip.travel_from}}</td>
+			<td>{{trip.travel_to}}</td>
+			<td>{{trip.description}}</td>
+		</tr>
+		{% endfor %}
+	</table>
+
+	<h4>Other Users' Travel Plans</h4>
+	<table>
+		<tr>
+			<td>Name</td>
+			<td>Destination</td>
+			<td>Travel Start Date</td>
+			<td>Travel End Date</td>
+			<td>Do you Want to Join?</td>
+		</tr>
+		{% for trip in trips %}
+		<tr>
+			<td>{{trip.user.first_name}}</td>
+			<td><a href="/travels/destination/{{trip.id}}">{{trip.destination}}</a></td>
+			<td>{{trip.travel_from}}</td>
+			<td>{{trip.travel_to}}</td>
+			<td><a href="/join/{{trip.id}}">Join</a></td>
+		</tr>
+		{% endfor %}
+	</table>
+	<a href="/travels/plan">Add Travel Plan</a>
+	<a href="/logout">Logout</a>
+	<a href="/destroy">Delete trip</a>
+</body>
+</html>

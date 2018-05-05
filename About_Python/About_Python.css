@@ -1,0 +1,164 @@
+*{
+	margin:0px;
+	padding: 0px;
+}
+#wrapper{
+	background-color:#245076;
+	width: 970px;
+	height: 800px;
+	margin-left: 10px;
+}
+#header{	
+	height: 110px;	
+	width:100%;
+	display: inline-block;
+
+}
+#image{
+	height:100%;
+	display: inline-block;
+}
+#python-image{
+	height: 100%;
+}
+
+#text-search{
+	display: inline-block;
+	width: 235px;
+	height: 100%;
+	vertical-align: top;
+	margin-top: 10px;
+	margin-left: 268px;
+
+}
+#text-search a{
+	color: #A6991D;
+}
+#text{
+	text-align: center;
+	margin-top: 10px;
+}
+#search-box{
+	height: 50px;
+	width:235px;
+	background-color: gray;
+	margin-top: 10px;
+	text-align: center;
+	border-radius: 5px;
+	box-shadow: 5px 5px 10px;
+}
+#search-box input{
+	margin-top: 15px;
+}
+#search-textarea{
+	width:90px;
+}
+.file-menu{
+	height: 50px;
+	width: 850px;
+	background-color: #437DAD;
+	margin-left: 50px;
+	border-radius: 5px;
+	box-shadow: 2px 2px 5px;
+	text-align: center;
+	padding-top: 10px;
+	
+}
+.file-menu a{
+	color: white;
+	text-decoration: none;
+	font-size:21px;
+	margin-left: 42px;
+	margin-right: 10px;	
+}
+.body{
+	width:100%;
+	height: 565px;
+}
+.navigator{
+	padding: 10px;
+	width: 200px;
+	height: 200px;
+	color: white;
+	margin-left: 104px;
+	margin-top: 15px;
+	display: inline-block;
+	vertical-align: top;
+}
+.navigator a{
+	color:white;
+}
+.about{
+	width:500px;
+	height: 200px;
+	display: inline-block;
+	color: white;
+	margin-top: 15px;
+	margin-left: 50px;
+
+}
+.about p{
+	color: white;
+	font-size: 13px;
+}
+.about h4{
+	text-align: center;
+	color: #D5BA3D;
+}
+.about h5{
+	text-align: center;
+}
+.learning-python{
+	width: 100%;
+	height: 252px;
+	background-color: white;
+	margin-top: 20px;
+	vertical-align: top;
+	padding-top: 10px;
+
+}
+#getting-started{
+	width:370px;
+	height: 257px;
+	border-style: solid;
+	border-width: 3px 0px 0px 0px;
+	border-color: #73A7D5;
+	display: inline-block;
+	vertical-align: top;
+	text-align: center;
+	margin-left: 85px;
+	margin-right: 60px;
+}
+#applications{
+	width:370px;
+	height: 257px;
+	border-style: solid;
+	border-width: 3px 0px 0px 0px;
+	border-color: #73A7D5;
+	display: inline-block;
+	text-align: center;
+}
+.learning-python li, a{
+	color: #8CB7DC;
+}
+#footer{
+	width: 100%;
+	height: 40px;
+	vertical-align: bottom;
+	display: inline-block;
+	margin-top: 10px;
+	color: white;
+	text-align: center;
+}
+#footer a{
+	display: inline-block;
+	margin-right: 30px;
+	margin-left: 20px;
+	text-decoration: none;
+	color: white;
+	font-family: "Times New Roman";
+}
+#footer span{
+	font-size: 9px;
+	margin-top: 15px;
+}

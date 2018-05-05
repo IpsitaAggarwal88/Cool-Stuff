@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Destination</title>
+</head>
+<body>
+	<h3>{{trip.destination}}</h3>
+	<table>
+		<tr>
+			<td>Planned By:</td>
+			<td>Description: </td>
+			<td>Travel Date From: </td>
+			<td>Travel Date To:</td>
+		</tr>
+		<tr>
+			<td>{{trip.user.first_name}} {{trip.user.last_name}}</td>
+			<td>{{trip.description}}</td>
+			<td>{{trip.travel_from}}</td>
+			<td>{{trip.travel_to}}</td>
+		</tr>
+		
+
+	</table>
+	<h4>Other Users joining the trip:</h4>
+	<table>
+
+		{% for user in users %}
+		<tr>
+			<td>{{user.first_name}} {{user.last_name}}</td>
+		</tr>
+		{% endfor %}
+	</table>
+	
+	<a href="/travels">Home</a>
+	<a href="/logout">Logout</a>
+
+</body>
+</html>

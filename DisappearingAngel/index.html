@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Disappearing Angels</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("#load-angels").click(function(){
+				var htmlStr="";
+				for(var i=0;i<8;i++)
+					{
+						htmlStr+='<img class="angel-img" src="angel.png">'
+											
+					}
+				console.log(htmlStr);
+				$("#img-div").html(htmlStr);
+			
+			});
+
+			$(document).on("click", "img",function(){
+
+				$(this).slideUp();
+			});
+
+			
+			
+			$("#button").click(function(){
+				$("img").slideDown();
+			});
+			
+		});
+
+	</script>
+</head>
+<body>
+	<div id="wrapper">
+		<div id="img-div">
+			<button id="load-angels">Load Angels</button>
+		</div>
+		<button id="button">Come Back Angels!!</button>
+	</div>
+</body>
+</html>

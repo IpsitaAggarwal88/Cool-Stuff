@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ninja Gold</title>
+	<style type="text/css">
+		#wrapper{
+			background-color: pink;
+			height: 500px;
+			width:970px;
+			display: inline-block;
+		}
+		.land{
+			
+    		margin-top: 50px;
+    		height: 200px;
+    		width: 168px;
+    		display: inline-block;
+    		background-color: silver;
+    		padding-left: 10px;
+		}
+		input{
+			width:70px;
+			vertical-align: top
+		}
+
+	</style>
+</head>
+<body>
+<div id="wrapper">
+	<p>Your Gold:</p><form><!-- <input type="hidden" name="gold" value="total"> --><p>{{session['money_total']}}</p></form>
+	<div class="land">
+		<h3>Farm</h3>
+		<p>(earns 10-20 golds)</p>
+		<form action="/process_money" method="post">
+  		<input type="hidden" name="building" value="farm" />
+  		<input type="submit" value="Find Gold!"/>
+	</form>
+	</div>
+	<div class="land">
+		<h3>Cave</h3>
+		<p>(earns 5-10 golds)</p>
+		<form action="/process_money" method="post">
+  		<input type="hidden" name="building" value="cave" />
+  		<input type="submit" value="Find Gold!"/>
+	</form>
+	</div>
+	<div class="land">
+		<h3>House</h3>
+		<p>(earns 2-5 golds)</p>
+		<form action="/process_money" method="post">
+  		<input type="hidden" name="building" value="house" />
+  		<input type="submit" value="Find Gold!"/>
+	</form>
+	</div>
+	<div class="land">
+		<h3>Casino</h3>
+		<p>(earns/takes 0-50 golds)</p>
+		<form action="/process_money" method="post">
+  		<input type="hidden" name="building" value="casino" />
+  		<input type="submit" value="Find Gold!"/>
+	</form>
+	</div>
+	<div id="footer">
+		<p>Activities:</p>
+		<form>
+			<p>{{session['string']}}</p><br>
+		</form>
+	</div>
+</div>
+</body>
+</html>

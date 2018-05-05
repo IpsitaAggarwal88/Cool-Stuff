@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Register/Login Here</title>
+</head>
+<body>
+	<h3>Registration</h3>
+	<form action="/process" method="post">
+		{% csrf_token %}
+		First Name:<input type="text" name="first_name"><br>
+		Last Name:<input type="text" name="last_name"><br>
+		Email:<input type="text" name="email"><br>
+		Password:<input type="Password" name="password"><br>
+		Confirm PW:<input type="Password" name="cpwd"><br>
+		<input type="submit" value="Register" name="">
+
+	</form><br>
+	<h3>Login</h3>
+	<form action="/login" method="post">
+		{% csrf_token %}
+		Email:<input type="text" name="email"><br>
+		Password:<input type="Password" name="password"><br>
+		<input type="submit" value="Login" name="">
+	</form>
+	{% if messages %}
+    <ul class="messages">
+    {% for message in messages %}
+      <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+</body>
+</html>
