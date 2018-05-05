@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Game of Thrones</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$(document).on('click','img',function(){
+				var img_id=$(this).attr('id');
+				var text='<fieldset><legend> House Details</legend>';
+				$.get('https://anapioficeandfire.com/api/houses/'+img_id,function(res){
+					
+					text+='<p> Name: '+res.name+'</p>';
+					if(res.words==="")
+						res.words="No words to display";
+					text+='<p> Words: '+res.words+'</p><p> Titles: ';
+					for(var i=0;i<res.titles.length;i++)
+					{
+						text+=res.titles[i]+',';
+
+					}
+					text+='</p></fieldset>';
+				$('#house-details-div').html(text);
+
+				})
+			
+			})
+			$('#362').hover(function(){
+				$("#wrapper").css ('background-image', "url('winteriscoming.jpg')");
+			});
+			$('#378').hover(function(){
+				$("#wrapper").css ('background-image', "url('fireandblood.jpg')");
+			});
+			$('#230').hover(function(){
+				$("#wrapper").css ('background-image', "url('lannisterback.jpg')");
+			});
+			$('#15').hover(function(){
+				$("#wrapper").css ('background-image', "url('housebaratheon.jpg')");
+			});
+		})
+	</script>
+	<link href="https://fonts.googleapis.com/css?family=Macondo" rel="stylesheet">
+	<style>
+		#wrapper{
+			height: 600px;
+			width: 970px;
+			margin:auto;
+			background-color: #F4F4FA;
+			background-size: cover;
+		}
+		#houses-div{
+			width: 870px;
+			height: 280px;
+			padding-left: 50px;
+			padding-top: 20px;
+			
+		}
+		#house-details-div{
+			width: 100%;
+			height: 200px;
+			margin-top: 65px;
+			position: absolute;
+
+
+		}
+		
+		.image{
+			height: 301px;
+    		width: 201px;
+			display: inline-block;
+			margin-top: 10px;
+			border-radius: 20px;
+			box-shadow: 5px 10px 3px #888888;
+			margin-left: 10px;
+			transition: all .2s ease-in-out;
+
+		}
+		.image:hover{
+			transform: scale(1.1);
+		}
+		
+		fieldset{
+			display: inline-block;
+			vertical-align: top;
+			position: relative;
+			left:260px;
+			width: 400px;
+			font-family: 'Macondo', cursive;
+			border-radius: 20px;
+			border-style: solid;
+			border-color:white;
+			color: white;
+			border-width:5px 5px 5px 5px;
+
+		}
+
+	</style>
+</head>
+<body>
+	<div id="wrapper">
+		<div id="houses-div">
+			<img id="362" class="image" src="stark.jpg">
+			<img id="378" class="image" src="targaryen.jpg">
+			<img id="230" class="image" src="lannister.jpg">
+			<img id="15" class="image" src="baratheon.png">
+		</div>
+		<div id="house-details-div">
+					
+		</div>
+		
+		
+			
+		
+	</div>
+	
+</body>
+</html>
